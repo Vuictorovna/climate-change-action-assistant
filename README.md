@@ -11,18 +11,6 @@ This project aims to develop an application powered by a Large Language Model (L
     git clone https://github.com/Vuictorovna/climate-change-action-assistant.git
     ```
 
-### Handling Environment Files and Ignored Folders
-
-**Important: Add your `.env`, `__pycache__`, and `venv` folders to `.gitignore` to prevent exposing sensitive information and unnecessary files.**
-
-1. Open your `.gitignore` file (or create one if it doesn't exist).
-2. Add the following lines to the `.gitignore` file:
-    ```
-    .env
-    __pycache__/
-    venv/
-    ```
-
 ### Making Contributions
 
 1. **Pull the Latest Changes**
