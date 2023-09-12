@@ -1,2 +1,6 @@
-Requirements
+# Packages required to run project
 
+requests
+bs4
+BeautifulSoup
+os
