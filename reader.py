@@ -13,4 +13,3 @@ def pdf_doc_loader(pdfs):
    return docs
 print("Loaded pdfs")
 
-# Function to extract text from pdfs
