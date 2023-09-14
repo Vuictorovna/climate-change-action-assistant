@@ -53,7 +53,6 @@ Utilized for generating semantic text embeddings.
 
     ```bash
     cd climate-change-action-assistant
-    pip install -r requirements.txt
     ```
 
 3. Setting Up a Virtual Environment.
@@ -133,6 +132,7 @@ Utilized for generating semantic text embeddings.
 - James Corfe [@jdc338](https://github.com/jdc338)
 - Jamie Adieze [@jamieadieze](https://github.com/jamieadieze)
 - Zulq Ansari [@ZulqAnsari](https://github.com/ZulqAnsari)
+
 
 
 **Good luck and have fun building your Climate Change Action Assistant!**
