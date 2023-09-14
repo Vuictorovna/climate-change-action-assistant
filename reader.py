@@ -1,6 +1,3 @@
-# PDF loader/reader
-
-# Import packages
 from langchain.document_loaders import PyPDFLoader
 
 # Directory path to downloaded pdfs
