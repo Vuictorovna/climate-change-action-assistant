@@ -1,1 +1,8 @@
+# Packages required to run project
+
+langchain.document_loaders
+requests
+bs4
+BeautifulSoup
+os
 streamlit
