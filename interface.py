@@ -4,13 +4,10 @@ import streamlit as st
 st.write("# Welcome to The Climate Change Chat Assistant!")
 st.write("Do you have a question for me, today?")
 
-
-def initialize_session_state():
+# Initialize the session state if it hasn't been initialized
+if "user_input" not in st.session_state:
     st.session_state.user_input = ""
     st.session_state.chat_history = []
-    # Add any other session-specific variables you need
-
-initialize_session_state()
 
 # Access the user input from session state
 user_input = st.text_input("Question", key="user_input")
