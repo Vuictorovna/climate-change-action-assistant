@@ -2,27 +2,15 @@ import sys
 
 print("Python sys.path:", sys.path)
 
-import os
-from dataclasses import dataclass
 
 from dotenv import load_dotenv
 
 from core import run_llm
-
+from utils1 import init_pinecone
 load_dotenv()
 
 
-@dataclass
-class PineconeCredentials:
-    api_key: str
-    index_name: str
-    environment_region: str
-
 
 if __name__ == "__main__":
-    pinecone_env = PineconeCredentials(
-        api_key=os.environ.get("PINECONE_API_KEY"),
-        index_name=os.environ.get("PINECONE_INDEX_NAME"),
-        environment_region=os.environ.get("PINECONE_ENVIRONMENT_REGION"),
-    )
+    pinecone_env = init_pinecone()
     run_llm(pinecone_env)
