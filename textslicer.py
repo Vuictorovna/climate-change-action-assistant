@@ -14,6 +14,18 @@ import pinecone
 
 
 def ingest_docs(pinecone_env: PineconeCredentials) -> None:
+    """
+    Ingest documents into Pinecone vector index after processing and embedding.
+
+    Parameters:
+    - pinecone_env (PineconeCredentials): Pinecone environment credentials.
+
+    Returns:
+    - None
+
+    Side Effects:
+    - Loads vectors into the Pinecone index.
+    """
     pinecone.init(
         api_key=pinecone_env.api_key, environment=pinecone_env.environment_region
     )
@@ -36,8 +48,8 @@ def ingest_docs(pinecone_env: PineconeCredentials) -> None:
 
     print("Successfully loaded vectors in Pinecone.")
 
+
 if __name__ == "__main__":
     pinecone_env = init_pinecone()
 
     ingest_docs(pinecone_env)
-    

@@ -8,6 +8,17 @@ from langchain.vectorstores import Pinecone
 
 
 def prepare_llm(query: str, pinecone_env, chat_history=None):
+    """
+    Prepare a Language Learning Model (LLM) for conversational retrieval with Pinecone.
+
+    Parameters:
+    - query (str): The user's query.
+    - pinecone_env: Pinecone environment credentials.
+    - chat_history (list, optional): A list of chat history. Default is an empty list.
+
+    Returns:
+    - A dictionary containing the answer from the model.
+    """
     pinecone.init(
         api_key=pinecone_env.api_key, environment=pinecone_env.environment_region
     )
