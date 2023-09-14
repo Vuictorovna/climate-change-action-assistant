@@ -1,6 +1,12 @@
+# Packages required to run project
+
+langchain.document_loaders
+requests
+bs4
+BeautifulSoup
+os
+streamlit
 openai==0.28.0
-
-
 
 python-dotenv
 
@@ -11,3 +17,4 @@ tiktoken
 
 isort
 black
+

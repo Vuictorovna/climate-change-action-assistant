@@ -40,3 +40,5 @@ This project aims to develop an application powered by a Large Language Model (L
 ## Important Note
 
 Please make sure to commit and push your changes before Thursday evening. This will give us enough time to compile a joint submission and resolve any potential merge conflicts.
+
+
