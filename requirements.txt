@@ -1,20 +1,14 @@
 # Packages required to run project
-
-langchain.document_loaders
 requests
 bs4
-BeautifulSoup
-os
 streamlit
-openai==0.28.0
-
+openai
 python-dotenv
-
+beautifulsoup4
 langchain
 openai
 pinecone-client
 tiktoken
-
+streamlit-chat
 isort
 black
-
