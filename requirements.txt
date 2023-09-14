@@ -6,3 +6,15 @@ bs4
 BeautifulSoup
 os
 streamlit
+openai==0.28.0
+
+python-dotenv
+
+langchain
+openai
+pinecone-client
+tiktoken
+
+isort
+black
+
