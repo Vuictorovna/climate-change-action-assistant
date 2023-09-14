@@ -1,5 +1,4 @@
 import os
-from typing import Dict
 
 import pinecone
 from langchain.chains import ConversationalRetrievalChain
@@ -8,10 +7,24 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 
 
-def run_llm(pinecone_env) -> Dict:
+def prepare_llm(query: str, pinecone_env, chat_history=None):
+    """
+    Prepare a Language Learning Model (LLM) for conversational retrieval with Pinecone.
+
+    Parameters:
+    - query (str): The user's query.
+    - pinecone_env: Pinecone environment credentials.
+    - chat_history (list, optional): A list of chat history. Default is an empty list.
+
+    Returns:
+    - A dictionary containing the answer from the model.
+    """
     pinecone.init(
         api_key=pinecone_env.api_key, environment=pinecone_env.environment_region
     )
+
+    if chat_history is None:
+        chat_history = []
 
     embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
 
@@ -22,21 +35,7 @@ def run_llm(pinecone_env) -> Dict:
     chat_model = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, verbose=True)
 
     qa = ConversationalRetrievalChain.from_llm(
-        llm=chat_model, retriever=doc_search.as_retriever()
+        chain_type="stuff", llm=chat_model, retriever=doc_search.as_retriever()
     )
 
-    chat_history = []
-
-    print("Start a conversation!")
-
-    while True:
-        query = input("You:")
-
-        if query == "quit":
-            break
-
-        response = qa({"question": query, "chat_history": chat_history}).get("answer")
-
-        print(f"Response: {response}")
-
-        chat_history.append((query, response))
+    return qa({"question": query, "chat_history": chat_history})
