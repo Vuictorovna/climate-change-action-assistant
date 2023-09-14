@@ -5,7 +5,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Pinecone
 
 from reader import pdf_doc_loader
-from utils1 import PineconeCredentials, init_pinecone
+from utils import PineconeCredentials, init_pinecone
 
 if os.path.exists("env.py"):
     import env
@@ -40,3 +40,4 @@ if __name__ == "__main__":
     pinecone_env = init_pinecone()
 
     ingest_docs(pinecone_env)
+    
