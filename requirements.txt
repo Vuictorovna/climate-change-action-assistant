@@ -12,3 +12,4 @@ tiktoken
 streamlit-chat
 isort
 black
+pypdf
